@@ -1,4 +1,13 @@
 MiniRoomer::Application.routes.draw do
+
+  get "users/new"
+
+  root to: 'static_pages#home'
+  match '/login', to: 'static_pages#login'
+  match '/signup', to: 'users#new'
+  match '/sell_room', to: 'static_pages#sell_room'
+  match '/search_room', to: 'static_pages#search_room'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
