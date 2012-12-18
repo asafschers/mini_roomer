@@ -1,4 +1,4 @@
-class Recaptcha
+class Recaptcha_class
   RECAPTCHA_PRIVATE_KEY = '6LdbgdoSAAAAAL5JbVbLpqYSeoRUEVT9uLNXbkBE'
   def self.verify(args)
     url = 'http://www.google.com/recaptcha/api/verify'
