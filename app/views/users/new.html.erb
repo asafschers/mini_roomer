@@ -24,7 +24,7 @@
        <%= f.label :date_of_birth, "Date of birth" %>                                         	
        <%= f.date_select :date_of_birth, :start_year => 1920, 
                          :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' } %>                                      
-       <%= recaptcha_tags :public_key => '6LdbgdoSAAAAADVcMnZ62jwj-DnvbbvvMH9UF96H' %>
+       <%= raw recaptcha_tags :public_key => '6LdbgdoSAAAAADVcMnZ62jwj-DnvbbvvMH9UF96H' %>
 
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
 
