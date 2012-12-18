@@ -65,6 +65,4 @@ MiniRoomer::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  ENV['RECAPTCHA_PUBLIC_KEY'] = '6LdbgdoSAAAAADVcMnZ62jwj-DnvbbvvMH9UF96H'
-  ENV['RECAPTCHA_PRIVATE_KEY'] = '6LdbgdoSAAAAAL5JbVbLpqYSeoRUEVT9uLNXbkBE'
 end
