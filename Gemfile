@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
-gem "recaptcha", "~> 0.3.4"
+gem 'recaptcha', :require => 'recaptcha/rails'
 gem "mocha", "~> 0.13.1"
 gem "i18n", "~> 0.6.1"
 gem "activesupport", "~> 3.2.9"
