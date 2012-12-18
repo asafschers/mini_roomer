@@ -1,10 +1,13 @@
 MiniRoomer::Application.routes.draw do
 
-  get "users/new"
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'static_pages#home'
-  match '/login', to: 'static_pages#login'
+
   match '/signup', to: 'users#new'
+  match '/login',  to: 'sessions#new'
+  match '/logout', to: 'sessions#destroy', via: :delete
   match '/sell_room', to: 'static_pages#sell_room'
   match '/search_room', to: 'static_pages#search_room'
 
