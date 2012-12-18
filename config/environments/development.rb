@@ -34,4 +34,7 @@ MiniRoomer::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  ENV['RECAPTCHA_PUBLIC_KEY'] = '6LdbgdoSAAAAADVcMnZ62jwj-DnvbbvvMH9UF96H'
+  ENV['RECAPTCHA_PRIVATE_KEY'] = '6LdbgdoSAAAAAL5JbVbLpqYSeoRUEVT9uLNXbkBE'
 end
