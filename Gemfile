@@ -8,6 +8,9 @@ gem "mocha", "~> 0.13.1"
 gem "i18n", "~> 0.6.1"
 gem "activesupport", "~> 3.2.9"
 gem "rake", "~> 10.0.3"
+gem 'omniauth-facebook'
+gem "paperclip", "~> 3.0"
+gem 'gmaps4rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

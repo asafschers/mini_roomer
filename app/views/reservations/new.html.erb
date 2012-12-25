@@ -1,0 +1,23 @@
+<% provide(:title, 'Sell a room') %>
+
+
+<h1>Sell a room</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+
+
+
+	<%= form_for(:uploaded_file, url: reservations_path, :html => { :multipart => true }) do |f| %> 
+
+	    <%= f.label :uploaded_file, 'Upload room reservation.' %>
+	    <%= f.file_field :uploaded_file  %>
+	  
+	  <p><%= f.submit 'Fetch data', class: "btn btn-large btn-primary" %></p>
+
+	<% end %>
+
+
+
+  </div>
+</div>

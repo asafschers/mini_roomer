@@ -2,14 +2,20 @@ MiniRoomer::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :reservations
 
   root to: 'static_pages#home'
 
   match '/signup', to: 'users#new'
   match '/login',  to: 'sessions#new'
   match '/logout', to: 'sessions#destroy', via: :delete
-  match '/sell_room', to: 'static_pages#sell_room'
+  match '/sell_room', to: 'reservations#new'
   match '/search_room', to: 'static_pages#search_room'
+  match '/more_fields', to: 'reservations#more_fields'
+
+  #match 'auth/:provider/callback', to: 'static_pages#home'
+  #match 'auth/failure', to: redirect('/')
+  #match 'signout', to: 'sessions#destroy', as: 'signout'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

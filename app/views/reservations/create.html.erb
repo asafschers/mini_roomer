@@ -1,0 +1,10 @@
+
+
+<%= @vals.keys.each do |key| %>
+	<%= "#{key}: #{@vals[key]}" %><br>
+<% end %>
+
+
+<%= gmaps4rails(@json)%><br>
+
+<%= link_to "Next!", more_fields_path, class: "btn btn-large btn-primary" %>

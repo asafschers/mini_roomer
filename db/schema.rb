@@ -11,7 +11,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121218144039) do
+ActiveRecord::Schema.define(:version => 20121224122051) do
+
+  create_table "hotels", :force => true do |t|
+    t.string   "HotName"
+    t.string   "HotChain"
+    t.string   "HotState"
+    t.string   "HotCity"
+    t.string   "HotAddress"
+    t.float    "HotLongitude"
+    t.float    "HotLatitude"
+    t.string   "HotEmail"
+    t.integer  "HotPostalCode"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "reservations", :force => true do |t|
+    t.integer  "ResConfirmationNum"
+    t.datetime "ResCheckIn"
+    t.datetime "ResCheckOut"
+    t.integer  "ResNumAdults"
+    t.integer  "ResNumChildren"
+    t.string   "ResCancelationCause"
+    t.string   "ResSource"
+    t.integer  "HotelId"
+    t.integer  "UserId"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
+  end
 
   create_table "simple_captcha_data", :force => true do |t|
     t.string   "key",        :limit => 40

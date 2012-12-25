@@ -1,10 +1,29 @@
 <% provide(:title, 'Home') %>
 
+
 <div class="center hero-unit">
   <h1>MINI ROOMER</h1>
-  <h2>
+
+  <div id="myCarousel" class="carousel slide">  
+  <!-- Carousel items -->  
+  <div class="carousel-inner">  
+    <div class="active item"><img src="http://2.bp.blogspot.com/-YeXnWcEdYpQ/TnfuJEw6YCI/AAAAAAAAADY/PEvgLu2Uc-U/s1600/renaissance_room.jpg"/></div>  
+    <div class="item"><img src="http://www.rocinvestments.co.uk/blog/wp-content/uploads/2010/05/buytolethotelroomsrocinvestments.jpg"/></div>
+
+    <div class="item"><img src="http://ignitedetroit.net/wp-content/uploads/2011/04/deluxe-hotel-room-motor-city-casino-hotel.jpg"/></div>
+
+    <div class="item"><img src="https://www.iceportal.com/data/starwood/445/74053_large.jpg"/></div>
+
+    <div class="item"><img src="http://tourop.travelberry.net/data/accommodation_images/Malpas_Hotel_-_North_Cyprus_191_14102010_161546.JPG"/></div>  
+  </div>  
+  <!-- Carousel nav -->  
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>  
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>  
+  </div> 
+
 
   <%= link_to "Sell Roomer!", sell_room_path, class: "btn btn-large btn-primary" %>
   <%= link_to "Buy Roomer!", search_room_path, class: "btn btn-large btn-primary" %>
+
 </div>
 
