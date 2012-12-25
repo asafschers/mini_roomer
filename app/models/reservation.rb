@@ -2,7 +2,7 @@ class Reservation < ActiveRecord::Base
   attr_accessible :ResCancelationCause, :ResCheckIn, :ResCheckOut, :ResConfirmationNum, :ResNumAdults, :ResNumChildren, :ResSource,
                   :latitude, :longitude, :gmap
   #belongs_to :user
-  #belongs_to :hotel
+  belongs_to :hotel
   acts_as_gmappable
 
   #validates :UserId, presence: true
@@ -18,7 +18,8 @@ class Reservation < ActiveRecord::Base
 
 
   def gmaps4rails_address
-    "#{self.ResCancelationCause}, #{self.ResSource}"
+      "#{self.hotel.HotName}, #{self.hotel.HotCity}"
   end
+
 
 end

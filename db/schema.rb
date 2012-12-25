@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121224122051) do
+ActiveRecord::Schema.define(:version => 20121225164917) do
 
   create_table "hotels", :force => true do |t|
     t.string   "HotName"
@@ -42,7 +42,12 @@ ActiveRecord::Schema.define(:version => 20121224122051) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
+    t.integer  "hotel_id"
   end
+
+  add_index "reservations", ["HotelId"], :name => "index_reservations_on_HotelId"
+  add_index "reservations", ["UserId"], :name => "index_reservations_on_UserId"
+  add_index "reservations", ["hotel_id"], :name => "index_reservations_on_hotel_id"
 
   create_table "simple_captcha_data", :force => true do |t|
     t.string   "key",        :limit => 40

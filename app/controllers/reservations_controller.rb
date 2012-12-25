@@ -24,22 +24,22 @@ class ReservationsController < ApplicationController
 		  
 	end
 
-		
-	@reservation = Reservation.new
-	@reservation.ResCancelationCause = @vals["Hotel name"]
-	@reservation.ResSource = @vals["City"]
+	@hotel = Hotel.new
+	@hotel.HotCity = @vals["City"]
+	@hotel.HotName = @vals["Hotel name"]
+	@hotel.save!
+
+	@reservation = @hotel.reservations.create
 	@reservation.save!
 
 	@json = Reservation.last.to_gmaps4rails
 
-
-	#flash.now[:error] = @vals
-
-
-  	#create reservation from xml
-  	#redirect to reservation + google map
-
+	#flash.now[:error] = Reservation.last.hotel.HotName
 
   end 
+
+  def show
+
+  end
 
 end
