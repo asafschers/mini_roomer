@@ -30,16 +30,44 @@ class ReservationsController < ApplicationController
 	@hotel.save!
 
 	@reservation = @hotel.reservations.create
+	@reservation.ResCheckIn = @vals["Check In"]
+	@reservation.ResCheckOut = @vals["Check Out"]
+	@reservation.ResConfirmationNum = @vals["Confirmation Number"]
+	@reservation.ResNumAdults = @vals["Number of guests"]
+	@reservation.ResCost = @vals["Cost"]
+	@reservation.ResOTA = @vals["OTA"]
+	@reservation.ResOriginalPrice = 0
+	@reservation.ResReservedPrice = 0
+	@reservation.ResPayment = "Temp"
 	@reservation.save!
 
 	@json = Reservation.last.to_gmaps4rails
 
-	#flash.now[:error] = Reservation.last.hotel.HotName
+  	#flash.now[:error] = @reservation
 
   end 
 
-  def show
+  def edit
+  	@reservation = Reservation.find(params[:id]) 	
 
+  end
+
+  def update
+  	@reservation = Reservation.find(params[:id])
+
+  	if @reservation.update_attributes(params[:reservation])
+  		flash.now[:success] = "Reservation updated"
+  		redirect_to @reservation
+  	else
+  		render 'edit'
+  	end	
+
+
+  end
+
+
+  def show
+  	@reservation = Reservation.find(params[:id])
   end
 
 end

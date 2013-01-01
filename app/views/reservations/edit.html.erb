@@ -1,0 +1,27 @@
+<% provide(:title, "Additional fields") %>
+<h1>Additional fields</h1>
+
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(Reservation.last) do |f| %>
+      <%= render 'shared/res_error_messages' %>
+
+      <%= f.label :ResOriginalPrice, "Original price"%>
+      <%= f.text_field :ResOriginalPrice %>
+
+      <%= f.label :ResReservedPrice, "Reserved price" %>
+      <%= f.text_field :ResReservedPrice %>
+
+      <%= f.label :ResPayment, "How do you want to recieve the money?" %>
+      <%= f.select( :ResPayment, options_for_select([["PayPal","Israel"],
+                                                 ["Check","United States"],
+                                                 ["Cash","United States"]]),
+                                                 :prompt => 'Select payment') %>    
+
+      <%= f.submit "Next!", class: "btn btn-large btn-primary" %>
+
+    <% end %>
+
+  </div>
+</div>

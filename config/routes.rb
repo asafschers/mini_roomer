@@ -11,8 +11,7 @@ MiniRoomer::Application.routes.draw do
   match '/logout', to: 'sessions#destroy', via: :delete
   match '/sell_room', to: 'reservations#new'
   match '/search_room', to: 'static_pages#search_room'
-  match '/more_fields', to: 'reservations#more_fields'
-  match '/show_reservation', to: 'reservations#show'
+
   
   #match 'auth/:provider/callback', to: 'static_pages#home'
   #match 'auth/failure', to: redirect('/')

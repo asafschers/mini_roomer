@@ -1,3 +1,24 @@
-<% provide(:title, "Summary details") %>
-<h1>Summary details</h1>
+<% provide(:title, "Reservation details") %>
+<h1>Reservation details</h1>
 
+<div class="row">
+  <aside class="span4">
+    <section>
+      
+        <h4>Hotel name:            <%= @reservation.hotel.HotName %></h4>
+        <h4>Hotel city:            <%= @reservation.hotel.HotCity %></h4>
+        <h4>Check in:              <%= @reservation.ResCheckIn %></h4>
+        <h4>Check out:             <%= @reservation.ResCheckOut %></h4>   
+        <h4>Confirmation number:   <%= @reservation.ResConfirmationNum %></h4>   
+        <h4>Number of guests:      <%= @reservation.ResNumAdults %></h4>  
+        <h4>Cost:				   <%= @reservation.ResCost %></h4>  
+        <h4>OTA:				   <%= @reservation.ResOTA %></h4>                
+        <h4>Original price:		   <%= @reservation.ResOriginalPrice %></h4>   
+        <h4>Reserved price:	       <%= @reservation.ResReservedPrice %></h4>   
+        <h4>Payment:               <%= @reservation.ResPayment %></h4>           
+
+        <%= link_to "Submit room", root_path, class: "btn btn-large btn-primary" %>
+      
+    </section>
+  </aside>
+</div>
